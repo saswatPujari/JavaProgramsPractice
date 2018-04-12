@@ -8,6 +8,7 @@ public class PrimitiveAddition {
 		double d= 0.05;
 		System.out.println(a+c); // adds a + ascii value of c
 		System.out.println(a+d);
+		System.out.println(c+c); // it wont concat the chars, it will add their ascii values
 		
 
 	}
