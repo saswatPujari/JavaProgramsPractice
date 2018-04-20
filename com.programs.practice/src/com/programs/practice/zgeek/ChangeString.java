@@ -1,5 +1,7 @@
 package com.programs.practice.zgeek;
 
+import java.util.Scanner;
+
 /**
  * Given a string S, the task is to change the string according to the condition; 
  * If the first letter in a string is capital letter then change the full string to capital letters, 
@@ -32,8 +34,20 @@ package com.programs.practice.zgeek;
 public class ChangeString {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	Scanner sc=new Scanner(System.in); 
+	int numTestCase=sc.nextInt();  
+	String[] inputArr = new String[numTestCase];
+	
+	for(int i=0;i<inputArr.length;i++) {
+		inputArr[i] = sc.next();
+	}
+	
+	System.out.println("Printing input array contents");
+	for(int i=0;i<inputArr.length;i++) {
+		System.out.println(inputArr[i]); 
+	}
+	
 	}
 
 }
