@@ -1,5 +1,10 @@
 package com.programs.practice.zgeek;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
 /**
  * Given an array of integers, sort the array according to frequency of elements. 
  * For example, if the input array is {2, 3, 2, 4, 5, 12, 2, 3, 3, 3, 12}, 
@@ -35,8 +40,43 @@ package com.programs.practice.zgeek;
 public class SortElemArrayByFrequency {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		Scanner sc=new Scanner(System.in); 
+		int numTestCase=sc.nextInt();  
+		String[] inputArr = new String[numTestCase];
+		
+			// accepting the input array from console
+			for(int a=0;a<numTestCase;a++) {
+				int n = sc.nextInt();
+				int[] array = new int[n];
+				for(int k=0;k<n;k++) {
+					array[k] = sc.nextInt();
+				}
+			
+			// storing unique elements along with their frequencies into a map
+			int key=0;
+			Map<Integer,Integer> map = new HashMap<Integer,Integer>();
+			for(int i=0;i<array.length;i++) {
+				int count = 1;
+				int start=0;
+				if(!map.containsKey(array[i])) {
+					start=i;
+					for(int j=start+1;j<array.length;j++) {
+						if(array[j]==array[start]) {
+							count++;
+						}
+					}
+					map.put(array[start], count);
+				}
+			}
+			
+			for(Entry<Integer,Integer> item: map.entrySet()) {
+				System.out.println(item.getKey()+","+item.getValue());
+			}
+			
+		}
 
 	}
+
 
 }
