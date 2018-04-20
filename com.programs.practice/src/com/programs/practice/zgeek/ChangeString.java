@@ -43,11 +43,18 @@ public class ChangeString {
 		inputArr[i] = sc.next();
 	}
 	
-	System.out.println("Printing input array contents");
 	for(int i=0;i<inputArr.length;i++) {
-		System.out.println(inputArr[i]); 
+		if(97 <= (int)inputArr[i].charAt(0) && 127 >= (int)inputArr[i].charAt(0)) {
+			inputArr[i] = inputArr[i].toLowerCase();
+		}else if(65 <= (int)inputArr[i].charAt(0) && 90 >= (int)inputArr[i].charAt(0)) {
+			inputArr[i] = inputArr[i].toUpperCase();
+		}
 	}
 	
+	System.out.println("Output : ");
+	for(int i=0;i<inputArr.length;i++) {
+		System.out.println(inputArr[i]);
+	}
 	}
 
 }
